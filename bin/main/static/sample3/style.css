@@ -1,0 +1,90 @@
+body{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+header{
+    margin-bottom: 10px;
+}
+footer{
+    margin-top: 10px;
+}
+section{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+h5{
+    color: #86c705;
+}
+
+#select-tab{
+    margin: 0 auto;
+}
+#select-tab{
+    width: 100%;
+    border-bottom: 5px #97d41c solid;
+}
+#select-tab >  .tab{
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    width: 22%;
+    margin: auto 10px;
+    background-color: #c8c8c8;
+    color: black;
+    padding:20px;
+}
+
+.tab-active{
+    background-color: #d7f1a3 !important;
+    border-top: 5px #97d41c solid;
+    border-right: 5px #97d41c solid;
+    border-left: 5px #97d41c solid;
+}
+
+#step{
+    width: 100%;
+    padding: 0;
+    margin: 10px 0px;
+    text-align: center;
+}
+#step>p{
+    display: inline-block;
+    padding: 10px;
+    margin: 0 auto;
+}
+#step > .step-name{
+    background-color: gray;
+    color: white;
+}
+.step-active{
+    background-color: yellow !important;
+    color: black !important;
+}
+.ckecklist-row2{
+    margin-top: 10px !important;
+}
+.checklist{
+    width: 100%;
+    height: 100%;
+    border: #d5d5f0 5px solid;
+}
+
+#process{
+    margin: 20px auto;
+    text-align: center;
+}
+#process > form{
+    margin: 20px auto;
+}
+
+.precautions{
+    display: block;
+    max-height: 250px;
+    width: 100%;
+    overflow-x: scroll;
+    overflow-x: hidden;
+    border: 1px gray solid;
+}
