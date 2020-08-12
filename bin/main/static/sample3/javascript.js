@@ -1,8 +1,13 @@
-$(function(){
+//Selector constant values
+const SLC_CK_AGREE = 'input[name="agree"]';
 
-    $('#agree').on('change', function(){
-        let check = $('#agree');
 
+
+$(window).on('load', function(){
+
+    $(SLC_CK_AGREE).on('change', function(){
+        let check = $(SLC_CK_AGREE);
+        
         if(check[0].checked){
             $('#submit').prop('disabled', false);
         }else{

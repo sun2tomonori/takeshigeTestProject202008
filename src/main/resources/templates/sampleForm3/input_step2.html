@@ -19,7 +19,73 @@
     <script th:src="@{/sample3/javascript.js}"></script>
 </head>
 <body>
+    <section class="text-center">
+        <form th:action="@{confirm}" th:object="${form}" method="POST">
+            <div id="step">
+                <p class="step-name">１.お支払い手順</p>
+                <p>▶︎</p>
+                <p class="step-name">２.お客様番号を入力</p>
+                <p>▶︎</p>
+                <p class="step-name step-active">３.クレジットカード情報等を入力</p>
+                <p>▶︎</p>
+                <p class="step-name">４.内容を確認</p>
+                <p>▶︎</p>
+                <p class="step-name">５.手続き完了</p>
+            </div>
+        </section>
 
+        <senction id="step1-section">
+            <h4>内容をご確認の上、よろしければ「お手続きはこちら」ボタンを押してください。</h4>
+            
+            <table class="table">
+                <tr>
+                    <th>クレジットカード番号</th>
+                    <td>
+                        <input type="text" class="form-control step1-input-text"><br>
+                        <sup>注釈xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx<br>例）9999-9999-9999-9999</sup>
+                    </td>
+                </tr>
+                <tr>
+                    <th>有効期限</th>
+                    <td>
+                        <input type="text" class="form-control step1-input-text"><br>
+                        <sup>注釈xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx<br>例）01/20</sup>
+                    </td>
+                </tr>
+                <tr>
+                    <th>セキュリティーコード</th>
+                    <td>
+                        <input type="text" class="form-control step1-input-text"><br>
+                        <sup>注釈xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx<br>例）999</sup>
+                    </td>
+                </tr>
+                <tr>
+                    <th>カード名義</th>
+                    <td>
+                        <input type="text" class="form-control step1-input-text"><br>
+                        <sup>注釈xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx<br>例）999</sup>
+                    </td>
+                </tr>
+            </table>
+
+            <section class="border-section" style="background-color: yellow; text-align: left;">
+                <h4 style="color: red;">！申し込み時に使用したYahoo! JAPAN IDをご準備ください</h4>
+                <sup>ヒント：<a href="#" onclick="void(0);">Yahoo! JAPAN IDを忘れてしまった場合は？</a></sup><br>
+                <br><br>
+                <h4>「次へ」ボタンを押すと「ログイン」画面へ遷移します。</h4>
+                <sup>
+                    Yahoo! JAPAN ID、パスワードを入力して「クレジットカード情報等を入力」画面にお進みください。<br>
+                    すでに登録済みの場合は「お申し込み情報の確認」画面へ移動します。<br>
+                </sup>
+                </h4>
+            </section>
+            <section class="form-submit">
+                <button type="submit" name="action" class="btn btn-secondary" value="back">戻る</button>
+                <button type="submit" name="action" class="btn btn-warning" value="next">次へ</button>
+            </button>
+            </section>
+        </form>
+    </senction>
 
 </body>
 </html>

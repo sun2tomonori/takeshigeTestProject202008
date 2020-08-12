@@ -155,3 +155,27 @@ h5{
     height: 10rem;
     text-align: left;
 }
+
+.form-submit{
+    text-align: center;
+}
+.form-submit input[type='submit'],
+.form-submit button[type='submit']{
+    width: 10rem;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+
+/* STEP1 */
+#step1-section  table{
+    border-spacing: 10px 0px !important;
+    vertical-align: middle;
+}
+#step1-section  table tr{
+    border-spacing: 10px 0px !important;
+    vertical-align: middle;
+}
+#step1-section  table  th{
+    background-color: #b0fafa !important;
+}
