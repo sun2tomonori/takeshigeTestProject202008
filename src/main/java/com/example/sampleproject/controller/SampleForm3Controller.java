@@ -31,6 +31,14 @@ public class SampleForm3Controller {
     }
 */
 
+    @ModelAttribute("agreeOptions")
+    public List<String> ckAgree() {
+        List<String> list = new ArrayList<String>();
+        list.add("agree");
+        
+        return list;
+    }
+
     @RequestMapping("/form")
     public String tlSample(@ModelAttribute("form") SampleForm3Form form) {
         return "sampleForm3/top";

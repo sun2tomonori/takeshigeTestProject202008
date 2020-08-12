@@ -1,12 +1,18 @@
 package com.example.sampleproject.form;
 
-public class SampleForm3Form {
-    private String agree;
+import java.util.Collections;
+import java.util.List;
 
-    public String getAgree() {
+public class SampleForm3Form {
+    private List<String> agree;
+
+    public List<String> getAgree() {
+        if (agree == null) {
+            agree = Collections.emptyList();
+        }
         return agree;
     }
-    public void setAgree(String agree) {
+    public void setAgree(List<String> agree) {
         this.agree = agree;
     }
 }

@@ -1,5 +1,5 @@
 body{
-    max-width: 1000px;
+    width: 1000px;
     margin: 0 auto;
 }
 
@@ -18,36 +18,70 @@ h5{
     color: #86c705;
 }
 
+.text-center{
+    text-align: center !important;
+}
+
 #select-tab{
     margin: 0 auto;
 }
 #select-tab{
     width: 100%;
-    border-bottom: 5px #97d41c solid;
+    padding: 0;
+    margin: 0;
+    letter-spacing: -0.5em;
+    height: 3rem;
+    line-height: 3rem;
 }
-#select-tab >  .tab{
-    text-align: center;
+#select-tab > .tab-whitespace-front,
+#select-tab > .tab-whitespace-end,
+#select-tab > .tab-whitespace-middle,
+#select-tab > .tab{
     display: inline-block;
+    height: 3rem;
+    border-bottom: 3px #97d41c solid;
+    vertical-align: bottom;
+    margin: 0;
+    letter-spacing: normal;
+}
+#select-tab > .tab-whitespace-front{
+    width: 1%;
+}
+
+#select-tab > .tab-whitespace-end{
+    width: 2%;
+}
+
+#select-tab > .tab-whitespace-middle{
+    width: 1%;
+}
+
+#select-tab > .tab{
+    text-align: center;
     text-decoration: none;
-    cursor: pointer;
-    width: 22%;
-    margin: auto 10px;
+    width: 23%;
     background-color: #c8c8c8;
     color: black;
-    padding:20px;
+    vertical-align: middle;
+    cursor: pointer;
+
+    border-top: none;
+    border-right: none;
+    border-left: none;
 }
 
 .tab-active{
     background-color: #d7f1a3 !important;
-    border-top: 5px #97d41c solid;
-    border-right: 5px #97d41c solid;
-    border-left: 5px #97d41c solid;
+    border-top: 3px #97d41c solid !important;
+    border-right: 3px #97d41c solid !important;
+    border-left: 3px #97d41c solid !important;
+    border-bottom: none !important;
 }
 
 #step{
     width: 100%;
     padding: 0;
-    margin: 10px 0px;
+    margin: 1.5rem auto;
     text-align: center;
 }
 #step>p{
@@ -61,6 +95,7 @@ h5{
 }
 .step-active{
     background-color: yellow !important;
+    border: 2px orange solid;
     color: black !important;
 }
 .ckecklist-row2{
@@ -86,5 +121,37 @@ h5{
     width: 100%;
     overflow-x: scroll;
     overflow-x: hidden;
-    border: 1px gray solid;
+    border: 1px lightslategrey solid;
+}
+
+.border-section{
+    border: #d5d5f0 5px solid;
+    width: 100%;
+    margin: 1.5rem auto;
+    padding: 1rem;
+    text-align: center;
+}
+
+.border-section button{
+    margin:2rem auto;
+    display: block;
+}
+.border-section p,
+.border-section h3{
+    text-align: left;
+}
+.border-section h3{
+    border-left: 0.5rem #97d41c solid;
+    text-align: left;
+    padding-left: 1rem;
+}
+.border-section p{
+    margin: 1rem;
+}
+
+.process{
+    background-color: rgb(236, 236, 236);
+    padding: 1rem;
+    height: 10rem;
+    text-align: left;
 }
