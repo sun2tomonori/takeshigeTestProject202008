@@ -21,7 +21,7 @@
 </head>
 <body>
     <section class="text-center">
-        <form th:action="@{input_step2}" th:object="${form}" method="POST">
+        <form th:action="@{input_step2}" method="POST">
             <div id="step">
                 <p class="step-name">１.お支払い手順</p>
                 <p>▶︎</p>
@@ -42,14 +42,14 @@
                 <tr>
                     <th>使用者番号</th>
                     <td>
-                        <input type="text" class="form-control step1-input-text"><br>
+                        <input type="text" class="form-control step1-input-text" th:field="${formCustomer.customerNo}" th:value="${formCustomer.customerNo}"><br>
                         <sup>クレジットカード決済手続書に記載されている使用者番号をお確かめください。<br>例）999999999</sup>
                     </td>
                 </tr>
                 <tr>
                     <th>確認番号</th>
                     <td>
-                        <input type="text" class="form-control step1-input-text"><br>
+                        <input type="text" class="form-control step1-input-text" th:field="${formCustomer.confirmNo}" th:value="${formCustomer.confirmNo}"><br>
                         <sup>クレジットカード決済手続書に記載されている確認番号をお確かめください。<br>例）999999999</sup>
                     </td>
                 </tr>

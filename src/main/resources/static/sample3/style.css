@@ -168,14 +168,20 @@ h5{
 
 
 /* STEP1 */
-#step1-section  table{
+#step1-section table,
+#step2-section table,
+#confirm-section table{
     border-spacing: 10px 0px !important;
     vertical-align: middle;
 }
-#step1-section  table tr{
+#step1-section table tr,
+#step2-section table tr,
+#confirm-section table tr{
     border-spacing: 10px 0px !important;
     vertical-align: middle;
 }
-#step1-section  table  th{
+#step1-section table th,
+#step2-section table th,
+#confirm-section table th{
     background-color: #b0fafa !important;
 }

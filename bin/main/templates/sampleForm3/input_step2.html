@@ -20,7 +20,7 @@
 </head>
 <body>
     <section class="text-center">
-        <form th:action="@{confirm}" th:object="${form}" method="POST">
+        <form th:action="@{confirm}" method="POST">
             <div id="step">
                 <p class="step-name">１.お支払い手順</p>
                 <p>▶︎</p>
@@ -41,42 +41,43 @@
                 <tr>
                     <th>クレジットカード番号</th>
                     <td>
-                        <input type="text" class="form-control step1-input-text"><br>
+                        <input type="text" class="form-control step1-input-text" th:field="${formCreditInfo.creditNo}" th:value="${formCreditInfo.creditNo}"><br>
                         <sup>注釈xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx<br>例）9999-9999-9999-9999</sup>
                     </td>
                 </tr>
                 <tr>
                     <th>有効期限</th>
                     <td>
-                        <input type="text" class="form-control step1-input-text"><br>
+                        <input type="text" class="form-control step1-input-text" th:field="${formCreditInfo.expirationDateMonth}" th:value="${formCreditInfo.expirationDateMonth}">
+                        <span>月</span>
+                        <input type="text" class="form-control step1-input-text" th:field="${formCreditInfo.expirationDateYear}" th:value="${formCreditInfo.expirationDateYear}">
+                        <span>年</span>
+                        <br>
                         <sup>注釈xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx<br>例）01/20</sup>
                     </td>
                 </tr>
                 <tr>
                     <th>セキュリティーコード</th>
                     <td>
-                        <input type="text" class="form-control step1-input-text"><br>
+                        <input type="text" class="form-control step1-input-text" th:field="${formCreditInfo.securityCode}" th:value="${formCreditInfo.securityCode}"><br>
                         <sup>注釈xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx<br>例）999</sup>
                     </td>
                 </tr>
                 <tr>
                     <th>カード名義</th>
                     <td>
-                        <input type="text" class="form-control step1-input-text"><br>
-                        <sup>注釈xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx<br>例）999</sup>
+                        <input type="text" class="form-control step1-input-text" th:field="${formCreditInfo.holderName}" th:value="${formCreditInfo.holderName}"><br>
+                        <sup>注釈xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx<br>例）HANAKO YAMADA</sup>
                     </td>
                 </tr>
             </table>
 
             <section class="border-section" style="background-color: yellow; text-align: left;">
-                <h4 style="color: red;">！申し込み時に使用したYahoo! JAPAN IDをご準備ください</h4>
-                <sup>ヒント：<a href="#" onclick="void(0);">Yahoo! JAPAN IDを忘れてしまった場合は？</a></sup><br>
+                <h4 style="color: red;">！注意書きタイトル</h4>
+                <sup>ヒント：<a href="#" onclick="void(0);">jump to LinkURL</a></sup><br>
                 <br><br>
-                <h4>「次へ」ボタンを押すと「ログイン」画面へ遷移します。</h4>
-                <sup>
-                    Yahoo! JAPAN ID、パスワードを入力して「クレジットカード情報等を入力」画面にお進みください。<br>
-                    すでに登録済みの場合は「お申し込み情報の確認」画面へ移動します。<br>
-                </sup>
+                <h4>説明文（タイトル）</h4>
+                <sup>注釈xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</sup>
                 </h4>
             </section>
             <section class="form-submit">

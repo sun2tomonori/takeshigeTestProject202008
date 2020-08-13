@@ -19,7 +19,65 @@
     <script th:src="@{/sample3/javascript.js}"></script>
 </head>
 <body>
+    <section class="text-center">
+        <div id="step">
+            <p class="step-name">１.お支払い手順</p>
+            <p>▶︎</p>
+            <p class="step-name">２.お客様番号を入力</p>
+            <p>▶︎</p>
+            <p class="step-name">３.クレジットカード情報等を入力</p>
+            <p>▶︎</p>
+            <p class="step-name step-active">４.内容を確認</p>
+            <p>▶︎</p>
+            <p class="step-name">５.手続き完了</p>
+        </div>
+    </section>
 
+    <senction id="confirm-section">
+        <table class="table">
+            <tr>
+                <th>使用者番号</th>
+                <td><label th:text="*{formCustomer.customerNo}">999999999</label></td>
+            </tr>
+            <tr>
+                <th>確認番号</th>
+                <td><label th:text="*{formCustomer.confirmNo}">999999999</label></td>
+            </tr>
+            <tr>
+                <th>クレジットカード番号</th>
+                <td><label>9999-****-****-9999</label></td>
+            </tr>
+            <tr>
+                <th>有効期限</th>
+                <td><label>2023年 01月</label></td>
+            </tr>
+            <tr>
+                <th>セキュリティコード</th>
+                <td><label>999</label></td>
+            </tr>
+            <tr>
+                <th>カード名義</th>
+                <td><label>HANAKO YAMADA</label></td>
+            </tr>
+        </table>
+        
+        <section class="border-section" style="background-color: yellow; text-align: left;">
+            <h4 style="color: red;">！注意書きタイトル</h4>
+            <sup>ヒント：<a href="#" onclick="void(0);">jump to LinkURL</a></sup><br>
+            <br><br>
+            <h4>説明文（タイトル）</h4>
+            <sup>注釈xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</sup>
+            </h4>
+        </section>
+        
+        <form th:action="@{finish}" th:object="${form}" method="POST">
+            <section class="form-submit">
+                <button type="submit" name="action" class="btn btn-secondary" value="back">戻る</button>
+                <button type="submit" name="action" class="btn btn-warning" value="finish">申し込み</button>
+            </section>
+        </form>
+
+    </senction>
 
 </body>
 </html>

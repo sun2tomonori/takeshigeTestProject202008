@@ -92,7 +92,7 @@
         </senction>
 
         <section id="process">
-            <form th:action="@{input_step1}" th:object="${form}" method="POST">
+            <form th:action="@{input_step1}" th:object="${formAgree}" method="POST">
 
                 <span th:each="agree : ${agreeOptions}">
                     <input type="checkbox" class="form-check-input" th:field="*{agree}" th:value="${agree}" />

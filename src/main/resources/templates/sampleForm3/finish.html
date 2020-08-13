@@ -19,7 +19,34 @@
     <script th:src="@{/sample3/javascript.js}"></script>
 </head>
 <body>
+    <section class="text-center">
+        <div id="step">
+            <p class="step-name">１.お支払い手順</p>
+            <p>▶︎</p>
+            <p class="step-name">２.お客様番号を入力</p>
+            <p>▶︎</p>
+            <p class="step-name">３.クレジットカード情報等を入力</p>
+            <p>▶︎</p>
+            <p class="step-name">４.内容を確認</p>
+            <p>▶︎</p>
+            <p class="step-name step-active">５.手続き完了</p>
+        </div>
+    </section>
 
+    <section class="border-section" style="background-color: yellow; text-align: left;">
+        <h4 style="color: red;">！注意書きタイトル(問合せ先など)</h4>
+        <sup>ヒント：<a href="#" onclick="void(0);">jump to LinkURL</a></sup><br>
+        <br><br>
+        <h4>説明文（タイトル）</h4>
+        <sup>注釈xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</sup>
+        </h4>
+    </section>
+    
+    <form th:action="@{backform}" th:object="${form}" method="POST">
+        <section class="form-submit">
+            <button type="submit" name="action" class="btn btn-warning">Top画面へ戻る</button>
+        </section>
+    </form>
 
 </body>
 </html>
