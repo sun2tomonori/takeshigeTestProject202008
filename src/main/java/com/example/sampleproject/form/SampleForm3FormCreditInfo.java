@@ -1,37 +1,37 @@
 package com.example.sampleproject.form;
 
 public class SampleForm3FormCreditInfo {
-    private Number creditNo;
-    private Number expirationDateMonth;
-    private Number expirationDateYear;
-    private Number securityCode;
+    private int creditNo;
+    private int expirationDateMonth;
+    private int expirationDateYear;
+    private int securityCode;
     private String holderName;
 
-    public Number getCreditNo() {
+    public int getCreditNo() {
         return creditNo;
     }
-    public void setCreditNo(Number creditNo) {
+    public void setCreditNo(int creditNo) {
         this.creditNo = creditNo;
     }
 
-    public Number getExpirationDateMonth() {
+    public int getExpirationDateMonth() {
         return expirationDateMonth;
     }
-    public void setExpirationDateMonth(Number expirationDateMonth) {
+    public void setExpirationDateMonth(int expirationDateMonth) {
         this.expirationDateMonth = expirationDateMonth;
     }
 
-    public Number getExpirationDateYear() {
+    public int getExpirationDateYear() {
         return expirationDateYear;
     }
-    public void setExpirationDateYear(Number expirationDateYear) {
+    public void setExpirationDateYear(int expirationDateYear) {
         this.expirationDateYear = expirationDateYear;
     }
 
-    public Number getSecurityCode() {
+    public int getSecurityCode() {
         return securityCode;
     }
-    public void setSecurityCode(Number securityCode) {
+    public void setSecurityCode(int securityCode) {
         this.securityCode = securityCode;
     }
 

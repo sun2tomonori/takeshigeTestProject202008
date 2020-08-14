@@ -18,9 +18,15 @@ import com.example.sampleproject.form.SampleForm3FormAgree;
 import com.example.sampleproject.form.SampleForm3FormCreditInfo;
 import com.example.sampleproject.form.SampleForm3FormCustomer;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 @Controller
 @RequestMapping("/sampleForm3")
 public class SampleForm3Controller {
+
+    private static final Logger log = LoggerFactory
+    .getLogger(SampleForm2Controller.class);
 
     @Autowired
     HttpSession session;
@@ -49,7 +55,7 @@ public class SampleForm3Controller {
                                 @ModelAttribute("formCustomer") SampleForm3FormCustomer formCustomer, Model modelCustomer){
         
         // SET SESSION
-
+        session.setAttribute("formAgree", formAgree);
         return "sampleForm3/input_step1";
     }
 
@@ -60,6 +66,11 @@ public class SampleForm3Controller {
                                 @RequestParam(value="action", required=true) String action){
         if(action.equals("next")){
             // SET SESSION
+            session.setAttribute("formCustomer", formCustomer);
+
+            SampleForm3FormCustomer form = (SampleForm3FormCustomer)session.getAttribute("formCustomer");
+            log.info(Integer.toString(form.getCustomerNo()));
+            log.info(Integer.toString(form.getConfirmNo()));
 
             return "sampleForm3/input_step2";
         }
@@ -75,16 +86,27 @@ public class SampleForm3Controller {
                             @ModelAttribute("formCustomer") SampleForm3FormCustomer formCustomer, Model modelCustomer,
                             @RequestParam(value="action", required=true) String action){
         if(action.equals("next")){
-            session.setAttribute("formCreditInfo", formCreditInfo);
             // SET SESSION
-
+            session.setAttribute("formCreditInfo", formCreditInfo);
             // GET SESSION
+            formCustomer = (SampleForm3FormCustomer) session.getAttribute("formCustomer");
+            formCreditInfo = (SampleForm3FormCreditInfo) session.getAttribute("formCreditInfo");
+
+            // log.info("------------------");
+            // log.info(Integer.toString(formCustomer.getCustomerNo()));
+            // log.info(Integer.toString(formCustomer.getConfirmNo()));
+            // log.info(Integer.toString(formCreditInfo.getCreditNo()));
+            // log.info(Integer.toString(formCreditInfo.getExpirationDateYear()));
+            // log.info(Integer.toString(formCreditInfo.getExpirationDateMonth()));
+            // log.info(Integer.toString(formCreditInfo.getSecurityCode()));
+            // log.info(formCreditInfo.getHolderName());
+            // log.info("------------------");
 
             return "sampleForm3/confirm";
         }
         else{
             // GET SESSION
-
+            formCustomer = (SampleForm3FormCustomer) session.getAttribute("formCustomer");
             return "sampleForm3/input_step1";
         }
     }
