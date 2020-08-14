@@ -68,14 +68,12 @@ public class SampleForm3Controller {
             // SET SESSION
             session.setAttribute("formCustomer", formCustomer);
 
-            SampleForm3FormCustomer form = (SampleForm3FormCustomer)session.getAttribute("formCustomer");
-            log.info(Integer.toString(form.getCustomerNo()));
-            log.info(Integer.toString(form.getConfirmNo()));
-
             return "sampleForm3/input_step2";
         }
         else{
-            // REMOVE SESSION
+            // REMOVE ALL SESSION
+            session.invalidate();
+
             return "sampleForm3/top";
         }
     }
@@ -86,27 +84,22 @@ public class SampleForm3Controller {
                             @ModelAttribute("formCustomer") SampleForm3FormCustomer formCustomer, Model modelCustomer,
                             @RequestParam(value="action", required=true) String action){
         if(action.equals("next")){
+
             // SET SESSION
             session.setAttribute("formCreditInfo", formCreditInfo);
             // GET SESSION
-            formCustomer = (SampleForm3FormCustomer) session.getAttribute("formCustomer");
-            formCreditInfo = (SampleForm3FormCreditInfo) session.getAttribute("formCreditInfo");
-
-            // log.info("------------------");
-            // log.info(Integer.toString(formCustomer.getCustomerNo()));
-            // log.info(Integer.toString(formCustomer.getConfirmNo()));
-            // log.info(Integer.toString(formCreditInfo.getCreditNo()));
-            // log.info(Integer.toString(formCreditInfo.getExpirationDateYear()));
-            // log.info(Integer.toString(formCreditInfo.getExpirationDateMonth()));
-            // log.info(Integer.toString(formCreditInfo.getSecurityCode()));
-            // log.info(formCreditInfo.getHolderName());
-            // log.info("------------------");
+            SampleForm3FormCustomer sessionFormCustomer = (SampleForm3FormCustomer) session.getAttribute("formCustomer");
+            formCustomer.setCustomerNo(sessionFormCustomer.getCustomerNo());
+            formCustomer.setConfirmNo(sessionFormCustomer.getConfirmNo());
 
             return "sampleForm3/confirm";
         }
         else{
             // GET SESSION
-            formCustomer = (SampleForm3FormCustomer) session.getAttribute("formCustomer");
+            SampleForm3FormCustomer sessionFormCustomer = (SampleForm3FormCustomer) session.getAttribute("formCustomer");
+            formCustomer.setCustomerNo(sessionFormCustomer.getCustomerNo());
+            formCustomer.setConfirmNo(sessionFormCustomer.getConfirmNo());
+
             return "sampleForm3/input_step1";
         }
     }
@@ -118,22 +111,44 @@ public class SampleForm3Controller {
                             @RequestParam(value="action", required=true) String action){
         if(action.equals("finish")){
             // GET SESSION
+            SampleForm3FormAgree sessionFormAgree = (SampleForm3FormAgree) session.getAttribute("formAgree");
+            formAgree.setAgree(sessionFormAgree.getAgree());
+
+            SampleForm3FormCustomer sessionFormCustomer = (SampleForm3FormCustomer) session.getAttribute("formCustomer");
+            formCustomer.setCustomerNo(sessionFormCustomer.getCustomerNo());
+            formCustomer.setConfirmNo(sessionFormCustomer.getConfirmNo());
+
+            SampleForm3FormCreditInfo sessionFormCreditInfo = (SampleForm3FormCreditInfo) session.getAttribute("formCreditInfo");
+            formCreditInfo.setCreditNo(sessionFormCreditInfo.getCreditNo());
+            formCreditInfo.setExpirationDateMonth(sessionFormCreditInfo.getExpirationDateMonth());
+            formCreditInfo.setExpirationDateYear(sessionFormCreditInfo.getExpirationDateYear());
+            formCreditInfo.setSecurityCode(sessionFormCreditInfo.getSecurityCode());
+            formCreditInfo.setHolderName(sessionFormCreditInfo.getHolderName());
+
+
 
             // INSERT DB
 
-            // REMOVE SESSION
+            // REMOVE ALL SESSION
+            session.invalidate();
 
             return "sampleForm3/finish";
         }
         else{
             // GET SESSION
+            SampleForm3FormCreditInfo sessionFormCreditInfo = (SampleForm3FormCreditInfo) session.getAttribute("formCreditInfo");
+            formCreditInfo.setCreditNo(sessionFormCreditInfo.getCreditNo());
+            formCreditInfo.setExpirationDateMonth(sessionFormCreditInfo.getExpirationDateMonth());
+            formCreditInfo.setExpirationDateYear(sessionFormCreditInfo.getExpirationDateYear());
+            formCreditInfo.setSecurityCode(sessionFormCreditInfo.getSecurityCode());
+            formCreditInfo.setHolderName(sessionFormCreditInfo.getHolderName());
 
             return "sampleForm3/input_step2";
         }
     }
 
     @RequestMapping(value = "backform", method = RequestMethod.POST)
-	public String backFormForDone(@ModelAttribute("form") SampleForm3FormAgree formAgree, Model model){
+	public String backFormForDone(@ModelAttribute("formAgree") SampleForm3FormAgree formAgree, Model model){
         return "sampleForm3/top";
     }
 }

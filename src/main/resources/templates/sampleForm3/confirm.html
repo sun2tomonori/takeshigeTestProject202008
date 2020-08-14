@@ -35,34 +35,34 @@
 
     <senction id="confirm-section">
         <table class="table">
-            <tr>
+            <tr th:object="${formCustomer}">
                 <th>使用者番号</th>
-                <td><label th:field="${formCustomer.customerNo}" th:text="${formCustomer.customerNo}"></label></td>
+                <td><label th:field="*{customerNo}" th:text="*{customerNo}"></label></td>
             </tr>
-            <tr>
+            <tr th:object="${formCustomer}">
                 <th>確認番号</th>
-                <td><label th:field="${formCustomer.confirmNo}" th:text="${formCustomer.confirmNo}"></label></td>
+                <td><label th:field="*{confirmNo}" th:text="*{confirmNo}"></label></td>
             </tr>
-            <tr>
+            <tr th:object="${formCreditInfo}">
                 <th>クレジットカード番号</th>
-                <td><label th:field="${formCreditInfo.creditNo}" th:text="${formCreditInfo.creditNo}"></label></td>
+                <td><label th:field="*{creditNo}" th:text="*{creditNo}"></label></td>
             </tr>
-            <tr>
+            <tr th:object="${formCreditInfo}">
                 <th>有効期限</th>
                 <td>
                     <label>
-                        <span th:field="${formCreditInfo.expirationDateYear}" th:text="${formCreditInfo.expirationDateYear}"></span><span>年</span>
-                        <span th:field="${formCreditInfo.expirationDateMonth}" th:text="${formCreditInfo.expirationDateMonth}"></span><span>月</span>
+                        <span th:field="*{expirationDateYear}" th:text="*{expirationDateYear}"></span><span>年</span>
+                        <span th:field="*{expirationDateMonth}" th:text="*{expirationDateMonth}"></span><span>月</span>
                     </label>
                 </td>
             </tr>
-            <tr>
+            <tr th:object="${formCreditInfo}">
                 <th>セキュリティコード</th>
-                <td><label th:field="${formCreditInfo.securityCode}" th:text="${formCreditInfo.securityCode}"></label></td>
+                <td><label th:field="*{securityCode}" th:text="*{securityCode}"></label></td>
             </tr>
-            <tr>
+            <tr th:object="${formCreditInfo}">
                 <th>カード名義</th>
-                <td><label th:field="${formCreditInfo.holderName}" th:text="${formCreditInfo.holderName}"></label></td>
+                <td><label th:field="*{holderName}" th:text="*{holderName}"></label></td>
             </tr>
         </table>
         

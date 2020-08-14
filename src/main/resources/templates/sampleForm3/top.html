@@ -95,7 +95,7 @@
             <form th:action="@{input_step1}" th:object="${formAgree}" method="POST">
 
                 <span th:each="agree : ${agreeOptions}">
-                    <input type="checkbox" class="form-check-input" th:field="*{agree}" th:value="${agree}" />
+                    <input type="checkbox" class="form-check-input" th:field="*{agree}" th:value="${agree}">
                     <label class="form-check-label" th:for="${#ids.prev('agree')}" th:text="'手数料・注意事項を確認の上、同意する'"></label>
                 </span>
                 <br>

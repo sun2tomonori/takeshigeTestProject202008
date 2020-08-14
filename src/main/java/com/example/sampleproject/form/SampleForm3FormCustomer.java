@@ -1,21 +1,21 @@
 package com.example.sampleproject.form;
 
 public class SampleForm3FormCustomer {
-    private int customerNo;
-    private int confirmNo;
+    private String customerNo;
+    private String confirmNo;
 
 
-    public int getCustomerNo() {
+    public String getCustomerNo() {
         return customerNo;
     }
-    public void setCustomerNo(int customerNo) {
+    public void setCustomerNo(String customerNo) {
         this.customerNo = customerNo;
     }
 
-    public int getConfirmNo() {
+    public String getConfirmNo() {
         return confirmNo;
     }
-    public void setConfirmNo(int confirmNo) {
+    public void setConfirmNo(String confirmNo) {
         this.confirmNo = confirmNo;
     }
 }

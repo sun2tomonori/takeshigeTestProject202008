@@ -37,27 +37,32 @@
         <table class="table">
             <tr>
                 <th>使用者番号</th>
-                <td><label th:text="*{formCustomer.customerNo}">999999999</label></td>
+                <td><label th:field="${formCustomer.customerNo}" th:text="${formCustomer.customerNo}"></label></td>
             </tr>
             <tr>
                 <th>確認番号</th>
-                <td><label th:text="*{formCustomer.confirmNo}">999999999</label></td>
+                <td><label th:field="${formCustomer.confirmNo}" th:text="${formCustomer.confirmNo}"></label></td>
             </tr>
             <tr>
                 <th>クレジットカード番号</th>
-                <td><label>9999-****-****-9999</label></td>
+                <td><label th:field="${formCreditInfo.creditNo}" th:text="${formCreditInfo.creditNo}"></label></td>
             </tr>
             <tr>
                 <th>有効期限</th>
-                <td><label>2023年 01月</label></td>
+                <td>
+                    <label>
+                        <span th:field="${formCreditInfo.expirationDateYear}" th:text="${formCreditInfo.expirationDateYear}"></span><span>年</span>
+                        <span th:field="${formCreditInfo.expirationDateMonth}" th:text="${formCreditInfo.expirationDateMonth}"></span><span>月</span>
+                    </label>
+                </td>
             </tr>
             <tr>
                 <th>セキュリティコード</th>
-                <td><label>999</label></td>
+                <td><label th:field="${formCreditInfo.securityCode}" th:text="${formCreditInfo.securityCode}"></label></td>
             </tr>
             <tr>
                 <th>カード名義</th>
-                <td><label>HANAKO YAMADA</label></td>
+                <td><label th:field="${formCreditInfo.holderName}" th:text="${formCreditInfo.holderName}"></label></td>
             </tr>
         </table>
         
