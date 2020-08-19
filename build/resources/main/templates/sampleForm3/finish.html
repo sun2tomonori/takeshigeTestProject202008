@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>公金支払 - FINISH</title>
+
+    <!-- css,jsファイルは resourses/static配下に配置する -->
+
+    <!-- jQuery inclued -->
+    <script th:src="@{/jquery-3.5.1/jquery-3.5.1.min.js}"></script>
+
+    <!-- Bootstrap4 inclued -->
+    <link th:href="@{/bootstrap-4.3.1-dist/css/bootstrap.min.css}" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js}" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script th:src="@{/bootstrap-4.3.1-dist/js/bootstrap.js}"></script>
+    
+    <!-- sample3 CSS/JS inclued -->
+    <link th:href="@{/sample3/style.css}" rel="stylesheet">
+    <script th:src="@{/sample3/javascript.js}"></script>
+</head>
+<body>
+    <section class="text-center">
+        <div id="step">
+            <p class="step-name">１.お支払い手順</p>
+            <p>▶︎</p>
+            <p class="step-name">２.お客様番号を入力</p>
+            <p>▶︎</p>
+            <p class="step-name">３.クレジットカード情報等を入力</p>
+            <p>▶︎</p>
+            <p class="step-name">４.内容を確認</p>
+            <p>▶︎</p>
+            <p class="step-name step-active">５.手続き完了</p>
+        </div>
+    </section>
+
+    <section class="border-section" style="background-color: yellow; text-align: left;">
+        <h4 style="color: red;">！注意書きタイトル(問合せ先など)</h4>
+        <sup>ヒント：<a href="#" onclick="void(0);">jump to LinkURL</a></sup><br>
+        <br><br>
+        <h4>説明文（タイトル）</h4>
+        <sup>注釈xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</sup>
+        </h4>
+    </section>
+    
+    <form th:action="@{backform}" th:object="${form}" method="POST">
+        <section class="form-submit">
+            <button type="submit" name="action" class="btn btn-warning">Top画面へ戻る</button>
+        </section>
+    </form>
+
+</body>
+</html>
