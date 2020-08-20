@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import com.example.sampleproject.SampleData;
-import com.example.sampleproject.SampleDataMapper;
+import com.example.sampleproject.data.SampleData;
+import com.example.sampleproject.data.SampleDataMapper;
 import com.example.sampleproject.form.SampleForm;
 
 import org.springframework.beans.factory.annotation.Autowired;
